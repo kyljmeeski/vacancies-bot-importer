@@ -1,9 +1,6 @@
 package com.kyljmeeski.vacanciesbot.importer;
 
-import com.kyljmeeski.rabbitmqwrapper.Exchanges;
-import com.kyljmeeski.rabbitmqwrapper.Queues;
-import com.kyljmeeski.rabbitmqwrapper.RabbitExchange;
-import com.kyljmeeski.rabbitmqwrapper.RabbitQueue;
+import com.kyljmeeski.rabbitmqwrapper.*;
 import com.rabbitmq.client.ConnectionFactory;
 
 import java.io.IOException;
@@ -21,9 +18,15 @@ public class Main {
 
         try {
             RabbitExchange exchange = exchanges.declare("vacancies", "direct");
-            RabbitQueue queue = queues.declare(
+            RabbitQueue tasksQueue = queues.declare(
                     "vacancy-import-tasks", false, false, false, null
             );
+
+            Consumer consumer = new PlainConsumer(factory, tasksQueue, message -> {
+                TaskMessage taskMessage = new TaskMessage(message);
+                System.out.println(taskMessage.pages());
+            });
+            consumer.startConsuming();
         } catch (IOException | TimeoutException e) {
             throw new RuntimeException("Check RabbitMQ");
         }
