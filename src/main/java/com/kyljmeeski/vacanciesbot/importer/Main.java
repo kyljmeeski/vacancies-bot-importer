@@ -22,10 +22,7 @@ public class Main {
                     "vacancy-import-tasks", false, false, false, null
             );
 
-            Consumer consumer = new PlainConsumer(factory, tasksQueue, message -> {
-                TaskMessage taskMessage = new TaskMessage(message);
-                System.out.println(taskMessage.pages());
-            });
+            Consumer consumer = new PlainConsumer(factory, tasksQueue, new TaskImportJob());
             consumer.startConsuming();
         } catch (IOException | TimeoutException e) {
             throw new RuntimeException("Check RabbitMQ");
