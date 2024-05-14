@@ -1,5 +1,7 @@
 package com.kyljmeeski.vacanciesbot.importer;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -95,6 +97,25 @@ public class Vacancy {
 
     public String link() {
         return "https://devkg.com/ru/jobs/" + slug;
+    }
+
+    @Override
+    public String toString() {
+        JsonObject json = new JsonObject();
+        json.addProperty("id", id());
+        json.addProperty("company", company());
+        json.addProperty("type", type());
+        json.addProperty("salary", salary());
+        json.addProperty("description", description());
+        JsonArray contacts = new JsonArray();
+        for (Map.Entry<String, String> entry : contacts().entrySet()) {
+            JsonObject contact = new JsonObject();
+            contact.addProperty("type", entry.getKey());
+            contact.addProperty("contact", entry.getValue());
+            contacts.add(contact);
+        }
+        json.add("contacts", contacts);
+        return json.toString();
     }
 
 }
