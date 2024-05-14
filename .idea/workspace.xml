@@ -4,17 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a57f474-c9b6-4ab6-8d38-e3e505c36d89" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="4a57f474-c9b6-4ab6-8d38-e3e505c36d89" name="Changes" comment="feat: override toString()">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kyljmeeski/vacanciesbot/importer/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kyljmeeski/vacanciesbot/importer/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kyljmeeski/vacanciesbot/importer/TaskImportJob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kyljmeeski/vacanciesbot/importer/TaskImportJob.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2isdbafJ4TveLmvGjFMcFsI4EtQ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -23,10 +36,63 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
+    "JUnit.TaskMessageTest.test.executor": "Run",
+    "Notification.DisplayName-DoNotAsk-Vcs Notifications": "VCS notifications",
+    "Notification.DoNotAsk-Vcs Notifications": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "kotlin-language-version-configured": "true"
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "onboarding.tips.debug.path": "/Users/mac/portfolio/projects/vacancies-bot/importer/src/main/java/com/kyljmeeski/vacanciesbot/importer/Main.java"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.kyljmeeski.vacanciesbot.importer" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.kyljmeeski.vacanciesbot.importer.Main" />
+      <module name="importer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.kyljmeeski.vacanciesbot.importer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TaskMessageTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="importer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.kyljmeeski.vacanciesbot.importer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.kyljmeeski.vacanciesbot.importer" />
+      <option name="MAIN_CLASS_NAME" value="com.kyljmeeski.vacanciesbot.importer.TaskMessageTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.TaskMessageTest.test" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -36,6 +102,183 @@
       <option name="presentableId" value="Default" />
       <updated>1720283290755</updated>
     </task>
+    <task id="LOCAL-00001" summary="init">
+      <option name="closed" value="true" />
+      <created>1720283316572</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1720283316572</updated>
+    </task>
+    <task id="LOCAL-00002" summary="dep: add rabbitmq-wrapper">
+      <option name="closed" value="true" />
+      <created>1720283435021</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1720283435021</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat: setup connection factory">
+      <option name="closed" value="true" />
+      <created>1720283445643</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1720283445643</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: create exchanges and queues objects">
+      <option name="closed" value="true" />
+      <created>1720283617748</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1720283617748</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: declare exchange and queue to import tasks">
+      <option name="closed" value="true" />
+      <created>1720283651183</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1720283651183</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: create TaskMessage: represents the message consumed from &quot;vacancy-import-tasks&quot;">
+      <option name="closed" value="true" />
+      <created>1720286606482</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1720286606482</updated>
+    </task>
+    <task id="LOCAL-00007" summary="test: test TaskMessage">
+      <option name="closed" value="true" />
+      <created>1720286617637</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1720286617637</updated>
+    </task>
+    <task id="LOCAL-00008" summary="dep: add junit">
+      <option name="closed" value="true" />
+      <created>1720286635816</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1720286635816</updated>
+    </task>
+    <task id="LOCAL-00009" summary="test: TaskMessage">
+      <option name="closed" value="true" />
+      <created>1720286709852</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1720286709852</updated>
+    </task>
+    <task id="LOCAL-00010" summary="feat: create consumer of &quot;vacancy-import-tasks&quot; queue; consume this queue; create TaskMessage object from received message">
+      <option name="closed" value="true" />
+      <created>1720286813084</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1720286813084</updated>
+    </task>
+    <task id="LOCAL-00011" summary="dep: add plain-https">
+      <option name="closed" value="true" />
+      <created>1720286856807</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1720286856807</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feat: create TaskImportJob: it does the thing that should be done to the received message">
+      <option name="closed" value="true" />
+      <created>1720290706115</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1720290706115</updated>
+    </task>
+    <task id="LOCAL-00013" summary="dep: update plain-https to 0.0.2">
+      <option name="closed" value="true" />
+      <created>1720290725251</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1720290725251</updated>
+    </task>
+    <task id="LOCAL-00014" summary="feat: use TaskImportJob object instead of lambda expression">
+      <option name="closed" value="true" />
+      <created>1720291639436</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1720291639436</updated>
+    </task>
+    <task id="LOCAL-00015" summary="dep: add jsoup">
+      <option name="closed" value="true" />
+      <created>1720294659698</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1720294659698</updated>
+    </task>
+    <task id="LOCAL-00016" summary="feat: create Vacancy">
+      <option name="closed" value="true" />
+      <created>1720294673811</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1720294673811</updated>
+    </task>
+    <task id="LOCAL-00017" summary="feat: iterate over pages retrieve vacancies from every of them">
+      <option name="closed" value="true" />
+      <created>1720294696449</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1720294696449</updated>
+    </task>
+    <task id="LOCAL-00018" summary="feat: override toString()">
+      <option name="closed" value="true" />
+      <created>1720295226926</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1720295226926</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init" />
+    <MESSAGE value="dep: add rabbitmq-wrapper" />
+    <MESSAGE value="feat: setup connection factory" />
+    <MESSAGE value="feat: create exchanges and queues objects" />
+    <MESSAGE value="feat: declare exchange and queue to import tasks" />
+    <MESSAGE value="feat: create TaskMessage: represents the message consumed from &quot;vacancy-import-tasks&quot;" />
+    <MESSAGE value="test: test TaskMessage" />
+    <MESSAGE value="dep: add junit" />
+    <MESSAGE value="test: TaskMessage" />
+    <MESSAGE value="feat: create consumer of &quot;vacancy-import-tasks&quot; queue; consume this queue; create TaskMessage object from received message" />
+    <MESSAGE value="dep: add plain-https" />
+    <MESSAGE value="feat: create TaskImportJob: it does the thing that should be done to the received message" />
+    <MESSAGE value="dep: update plain-https to 0.0.2" />
+    <MESSAGE value="feat: use TaskImportJob object instead of lambda expression" />
+    <MESSAGE value="dep: add jsoup" />
+    <MESSAGE value="feat: create Vacancy" />
+    <MESSAGE value="feat: iterate over pages retrieve vacancies from every of them" />
+    <MESSAGE value="feat: override toString()" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: override toString()" />
   </component>
 </project>
