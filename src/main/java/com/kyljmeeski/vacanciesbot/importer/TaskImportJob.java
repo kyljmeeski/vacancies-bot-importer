@@ -8,10 +8,19 @@ import com.kyljmeeski.plainhttps.MissingFieldException;
 import com.kyljmeeski.plainhttps.Request;
 import com.kyljmeeski.plainhttps.Response;
 import com.kyljmeeski.plainhttps.request.GetRequest;
+import com.kyljmeeski.rabbitmqwrapper.Producer;
 
+import java.io.IOException;
+import java.util.concurrent.TimeoutException;
 import java.util.function.Consumer;
 
 public class TaskImportJob implements Consumer<String> {
+
+    private final Producer producer;
+
+    public TaskImportJob(Producer producer) {
+        this.producer = producer;
+    }
 
     @Override
     public void accept(String message) {
@@ -27,10 +36,14 @@ public class TaskImportJob implements Consumer<String> {
                     for (JsonElement element : vacancies) {
                         String slug = element.getAsJsonObject().get("slug").getAsString();
                         Vacancy vacancy = new Vacancy(slug);
+                        try {
+                            producer.produce(vacancy.toString());
+                        } catch (IOException | TimeoutException e) {
+                            throw new RuntimeException(e);
+                        }
                     }
-
                 } catch (MissingFieldException e) {
-                    throw new RuntimeException(e);
+                    e.printStackTrace();
                 }
             }
         }

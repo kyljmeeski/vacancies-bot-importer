@@ -21,11 +21,16 @@ public class Main {
             RabbitQueue tasksQueue = queues.declare(
                     "vacancy-import-tasks", false, false, false, null
             );
+            queues.declare(
+                    "vacancies-to-store", false, false, false, null
+            ).bind(exchange, "to-store");
 
-            Consumer consumer = new PlainConsumer(factory, tasksQueue, new TaskImportJob());
+            Producer producer = new PlainProducer(factory, exchange, "to-store");
+
+            Consumer consumer = new PlainConsumer(factory, tasksQueue, new TaskImportJob(producer));
             consumer.startConsuming();
         } catch (IOException | TimeoutException e) {
-            throw new RuntimeException("Check RabbitMQ");
+            throw new RuntimeException(e);
         }
 
     }
