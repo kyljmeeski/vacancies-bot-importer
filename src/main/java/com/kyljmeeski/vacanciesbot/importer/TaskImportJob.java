@@ -61,6 +61,7 @@ public class TaskImportJob implements Consumer<String> {
                         Vacancy vacancy = new Vacancy(slug);
                         try {
                             producer.produce(vacancy.toString());
+                            System.out.println(vacancy.id() + " -> vacancies-to-store");
                         } catch (IOException | TimeoutException e) {
                             throw new RuntimeException(e);
                         }

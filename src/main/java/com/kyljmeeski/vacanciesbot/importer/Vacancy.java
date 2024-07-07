@@ -34,6 +34,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
 
 public class Vacancy {
 
@@ -53,48 +54,48 @@ public class Vacancy {
         return slug;
     }
 
-    public String title() {
+    public Optional<String> title() {
         Element h1 = document.selectFirst("h1");
         if (h1 != null) {
-            return h1.text();
+            return Optional.of(h1.text());
         }
-        return "";
+        return Optional.empty();
     }
 
-    public String company() {
+    public Optional<String> company() {
         Element companyDiv = document.selectFirst("div.company");
         if (companyDiv != null) {
             Element company = companyDiv.selectFirst("strong");
             if (company != null) {
-                return company.text();
+                return Optional.of(company.text());
             }
         }
-        return "";
+        return Optional.empty();
     }
 
-    public String type() {
+    public Optional<String> type() {
         Elements types = document.select("div.type");
         Element type = types.get(0).selectFirst("strong");
         if (type != null) {
-            return type.text();
+            return Optional.of(type.text());
         }
-        return "";
+        return Optional.empty();
     }
 
-    public String salary() {
+    public Optional<String> salary() {
         Element priceDiv = document.selectFirst("div.price");
         if (priceDiv != null) {
-            return priceDiv.text();
+            return Optional.of(priceDiv.text());
         }
-        return "";
+        return Optional.empty();
     }
 
-    public String description() {
+    public Optional<String> description() {
         Element mainElement = document.selectFirst("main");
         if (mainElement != null) {
-            return mainElement.html();
+            return Optional.of(mainElement.html());
         }
-        return "";
+        return Optional.empty();
     }
 
     public Map<String, String> contacts() {
@@ -126,11 +127,11 @@ public class Vacancy {
     public String toString() {
         JsonObject json = new JsonObject();
         json.addProperty("id", id());
-        json.addProperty("title", title());
-        json.addProperty("company", company());
-        json.addProperty("type", type());
-        json.addProperty("salary", salary());
-        json.addProperty("description", description());
+        title().ifPresent(title -> json.addProperty("title", title));
+        company().ifPresent(company -> json.addProperty("company", company));
+        type().ifPresent(type -> json.addProperty("type", type));
+        salary().ifPresent(salary -> json.addProperty("salary", salary));
+        description().ifPresent(description -> json.addProperty("description", description));
         JsonArray contacts = new JsonArray();
         for (Map.Entry<String, String> entry : contacts().entrySet()) {
             JsonObject contact = new JsonObject();
@@ -139,6 +140,7 @@ public class Vacancy {
             contacts.add(contact);
         }
         json.add("contacts", contacts);
+        json.addProperty("link", link());
         return json.toString();
     }
 
