@@ -33,14 +33,21 @@ import java.util.concurrent.TimeoutException;
 public class Main {
 
     public static void main(String[] args) {
+        ApplicationProperties applicationProperties = new ApplicationProperties();
+
         ConnectionFactory factory = new ConnectionFactory();
-        factory.setHost("localhost");
-        factory.setPort(5672);
+        factory.setHost(applicationProperties.rabbitMQHost());
+        factory.setPort(applicationProperties.rabbitMQPort());
         try {
             Connection connection = factory.newConnection();
 
             Exchanges exchanges = new Exchanges(connection);
             Queues queues = new Queues(connection);
+
+            System.out.println("Importer is parsing vacancies from \"devkg.com/api/pages/jobs\" and queueing them " +
+                    "to the queue \"vacancies-to-store\"@" + applicationProperties.rabbitMQHost() + ":" +
+                    applicationProperties.rabbitMQPort()
+            );
 
             try {
                 RabbitExchange exchange = exchanges.declare("vacancies", "direct");
