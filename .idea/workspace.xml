@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a57f474-c9b6-4ab6-8d38-e3e505c36d89" name="Changes" comment="feat: override toString()">
+    <list default="true" id="4a57f474-c9b6-4ab6-8d38-e3e505c36d89" name="Changes" comment="update pom.xml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kyljmeeski/vacanciesbot/importer/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kyljmeeski/vacanciesbot/importer/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kyljmeeski/vacanciesbot/importer/TaskImportJob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kyljmeeski/vacanciesbot/importer/TaskImportJob.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kyljmeeski/vacanciesbot/importer/Vacancy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kyljmeeski/vacanciesbot/importer/Vacancy.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +24,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;studying-kyljmeeski&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:kyljmeeski/vacancies-bot-importer.git&quot;,
+    &quot;accountId&quot;: &quot;b8f4d3ef-a48f-4261-a233-aaa28f84f5c0&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -45,6 +56,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/mac/portfolio/projects/vacancies-bot/importer",
     "onboarding.tips.debug.path": "/Users/mac/portfolio/projects/vacancies-bot/importer/src/main/java/com/kyljmeeski/vacanciesbot/importer/Main.java"
   }
 }]]></component>
@@ -246,7 +258,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720295226926</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="update pom.xml">
+      <option name="closed" value="true" />
+      <created>1720296705746</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1720296705746</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -279,6 +299,7 @@
     <MESSAGE value="feat: create Vacancy" />
     <MESSAGE value="feat: iterate over pages retrieve vacancies from every of them" />
     <MESSAGE value="feat: override toString()" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: override toString()" />
+    <MESSAGE value="update pom.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="update pom.xml" />
   </component>
 </project>

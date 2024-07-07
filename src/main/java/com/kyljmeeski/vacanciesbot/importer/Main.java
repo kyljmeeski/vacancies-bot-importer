@@ -24,6 +24,7 @@
 package com.kyljmeeski.vacanciesbot.importer;
 
 import com.kyljmeeski.rabbitmqwrapper.*;
+import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 
 import java.io.IOException;
@@ -35,23 +36,28 @@ public class Main {
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost("localhost");
         factory.setPort(5672);
-
-        Exchanges exchanges = new Exchanges(factory);
-        Queues queues = new Queues(factory);
-
         try {
-            RabbitExchange exchange = exchanges.declare("vacancies", "direct");
-            RabbitQueue tasksQueue = queues.declare(
-                    "vacancy-import-tasks", false, false, false, null
-            );
-            queues.declare(
-                    "vacancies-to-store", false, false, false, null
-            ).bind(exchange, "to-store");
+            Connection connection = factory.newConnection();
 
-            Producer producer = new PlainProducer(factory, exchange, "to-store");
+            Exchanges exchanges = new Exchanges(connection);
+            Queues queues = new Queues(connection);
 
-            Consumer consumer = new PlainConsumer(factory, tasksQueue, new TaskImportJob(producer));
-            consumer.startConsuming();
+            try {
+                RabbitExchange exchange = exchanges.declare("vacancies", "direct");
+                RabbitQueue tasksQueue = queues.declare(
+                        "vacancy-import-tasks", false, false, false, null
+                );
+                queues.declare(
+                        "vacancies-to-store", false, false, false, null
+                ).bind(exchange, "to-store");
+
+                Producer producer = new PlainProducer(connection, exchange, "to-store");
+
+                Consumer consumer = new PlainConsumer(connection, tasksQueue, new TaskImportJob(producer));
+                consumer.startConsuming();
+            } catch (IOException | TimeoutException e) {
+                throw new RuntimeException(e);
+            }
         } catch (IOException | TimeoutException e) {
             throw new RuntimeException(e);
         }

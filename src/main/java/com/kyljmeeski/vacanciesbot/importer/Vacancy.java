@@ -126,6 +126,7 @@ public class Vacancy {
     public String toString() {
         JsonObject json = new JsonObject();
         json.addProperty("id", id());
+        json.addProperty("title", title());
         json.addProperty("company", company());
         json.addProperty("type", type());
         json.addProperty("salary", salary());
